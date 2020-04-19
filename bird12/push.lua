@@ -95,10 +95,10 @@ function push:setShader(name, shader)
   else
     self:getCanvasTable(name).shader = shader
   end
-end
-
+end 
+-- Manirathi - Fixed problem with love.window.getPixelScale() used new correct method love.window.getDPIScale()
 function push:initValues()
-  self._PSCALE = self._highdpi and love.window.getPixelScale() or 1
+  self._PSCALE = self._highdpi and love.window.getDPIScale() or 1
   
   self._SCALE = {
     x = self._RWIDTH/self._WWIDTH * self._PSCALE,
